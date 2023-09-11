@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Product from './Product.js';
+
 
 
 const 제목임 = <h1>이건 제목이야</h1>;
@@ -16,6 +18,9 @@ for(let i = 0 ; i < 10 ; i ++){
 function App() {
   return (
     <div className="App">
+      <Product></Product>
+      <Product></Product>
+      <Product></Product>
       <header className="App-header">
         {제목임}
         <img src={logo} className="App-logo" alt="logo" />
