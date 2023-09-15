@@ -6,6 +6,8 @@ import './css/index.css';
 
 import image from './image/usp_a.jpg';
 import State from './State';
+import EventEdu from './EventEdu';
+import { useState } from 'react';
 
 
 //  리액트에서 for문으로 컨텐츠 만그는건 권장X
@@ -14,7 +16,15 @@ import State from './State';
 
 
 function App() {
-  return (
+    
+    
+    const [clickTitle , setClickTitle] = useState('24시간 언제나');
+
+  
+    return (
+
+    
+
     <div className='apps'>
     <header>
     <div className="header-inner">
@@ -60,7 +70,13 @@ function App() {
 <main>
     <section id="advantages-container">
         <div className="advantage">
-            <h2>24시간 언제나</h2>
+
+            <h2 onClick={()=>{
+                setClickTitle('클릭 된 제목입니다')
+            }}> 
+            {clickTitle}
+            </h2>
+
             <p>
                 한밤중이나 주말에도 스마트폰으로
                 <br />
@@ -215,6 +231,7 @@ function App() {
             <a href="#">고객센터</a>
             <a href="#">제휴 문의</a>
         </nav>
+        <EventEdu></EventEdu>
         <div className="information">
             <div>
                 <dl>

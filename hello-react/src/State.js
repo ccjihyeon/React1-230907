@@ -7,12 +7,17 @@ export default function State() {
     // onClick => 클릭 이벤트 리스너와 같은개념
     const [inOn , setInOn] = useState(false);
 
+    const [yourInput,setYourInput] = useState('');
+
     function changeToggle(){
         setInOn(!inOn);
         // setInOn()
         // console.log(`isOn : ${inOn}`
     }
     
+    const handInputChange = (event) => {
+        setYourInput(event.target.value);
+    }
 
     return (
     <div>
@@ -22,6 +27,12 @@ export default function State() {
         <p>현재 온 오프 상태 : { inOn ?  'on' : 'off' }</p>
                             {/* { inOn ?  'ture일때 나타내라' : 'false일때 나타내라' } */}
         <button onClick= {changeToggle} > 토글버튼 </button>
+
+        <input type='text' onChange = {handInputChange}></input>
+        <p className='your-input'>
+            당신의 입력 : {yourInput}
+        </p>
     </div>
   )
-}
+} 
+
