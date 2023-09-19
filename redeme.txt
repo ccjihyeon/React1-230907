@@ -15,9 +15,25 @@ node.js 설치확인
     cd.. : 상위폴더로 
     cd 폴더이름 : 폴더로진입
     dir : 현재위치에 있는 폴더 목록확인
+    npm start : 페이지열기
 
 리액트 내에서 HTML 자동완성
-    F1 -> Open setting(JSON)
-         "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    F1 -> Open user settings(JSON)
 
-         rfc입력
+    "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    직접 쓰는것보다 구글에 react html 자동완성검색해서 복사 붙여넣기 하세요
+
+    ex->
+    {
+        "emmet.includeLanguages": { "javascript": "javascriptreact" },
+        "window.zoomLevel": 2
+    }   
+
+        확장 프로그램 aout import 두번째 다운
+
+props 
+
+
+rcc = 좀 더 세밀하게 설정할때 사용
+rfc =  함수형 컴포넌트 <주로사용함>
+refs = 개체에 아이디를 입력해서 직접 컨트롤 하려 할때 사용

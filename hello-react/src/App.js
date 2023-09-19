@@ -8,6 +8,9 @@ import image from './image/usp_a.jpg';
 import State from './State';
 import EventEdu from './EventEdu';
 import { useState } from 'react';
+// import ClassComp2 from './ClassComp2';
+import ForComp from './ForComp';
+import MeatLove from './MeatLove';
 
 
 //  리액트에서 for문으로 컨텐츠 만그는건 권장X
@@ -20,12 +23,45 @@ function App() {
     
     const [clickTitle , setClickTitle] = useState('24시간 언제나');
 
-  
+    const 반복컴포넌트 = [];
+
+    for(let i = 0; i < 10 ; i ++){
+        반복컴포넌트.push(<ForComp index = {i+1}></ForComp>);
+    }
+    // for를 이용한 반복문은 리액트에 적합하지 않음.
+
+    const 고기목록 = ['닭','소','돼지','양','오리','물'];
+    
+
+    let test = '';
+
+    고기목록.map((고기)=>{
+        test += `${고기}고기`;
+    })
+    
+    console.log(test);
+
+
+
     return (
 
     
 
     <div className='apps'>
+    {/* <ClassComp2></ClassComp2> */}
+    <MeatLove 고기종류={고기목록[0]}></MeatLove>
+    <MeatLove 고기종류={고기목록[1]}></MeatLove>
+    <MeatLove 고기종류={고기목록[2]}></MeatLove>
+    <MeatLove 고기종류={고기목록[3]}></MeatLove>
+    <MeatLove 고기종류={고기목록[4]}></MeatLove>
+    <MeatLove 고기종류={고기목록[5]}></MeatLove>
+    {/* 배열.map(처리방법)*/}
+    {반복컴포넌트}
+    {
+        고기목록.map((고기,index)=>
+        <MeatLove 고기종류 = {고기} 순서 = {index+1}></MeatLove>)
+    }
+
     <header>
     <div className="header-inner">
         <h1>
